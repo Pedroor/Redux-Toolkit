@@ -1,5 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+interface PayloadProps {
+  number: number;
+  name: string;
+}
 const counterSlice = createSlice({
   name: "@counter",
   initialState: {
@@ -11,15 +15,24 @@ const counterSlice = createSlice({
     },
     decrementCounter: state => {
       if (state.value > 0) {
-        state.value >= 1;
+        state.value -= 1;
       }
     },
     resetCounter: state => {
       state.value = 0;
     },
+    randomIncrementCounter: (state, action: PayloadAction<PayloadProps>) => {
+      if (state.value < 99) {
+        state.value += action.payload.number;
+      }
+    },
   },
 });
 
-export const { incrementCounter, decrementCounter, resetCounter } =
-  counterSlice.actions;
+export const {
+  incrementCounter,
+  decrementCounter,
+  resetCounter,
+  randomIncrementCounter,
+} = counterSlice.actions;
 export const counterReducer = counterSlice.reducer;
