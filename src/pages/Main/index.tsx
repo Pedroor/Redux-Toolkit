@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import { ActionsSection, Counter } from '../../components';
-import * as S from './styles';
+import { ActionsSection, Counter } from "../../components";
+import * as S from "./styles";
 
 const Main = () => {
   const [counter, setCounter] = useState(0);
@@ -13,7 +13,7 @@ const Main = () => {
       <S.Wrapper>
         <ActionsSection setCounter={setCounter} />
 
-        <Counter value={counter} />
+        <Counter />
       </S.Wrapper>
 
       <S.Footer>

@@ -1,11 +1,11 @@
-import * as S from './styles';
+import { useSelector } from "react-redux";
+import { ReduxStore } from "../../store/types";
+import * as S from "./styles";
 
-type CounterProps = {
-  value: number;
+const Counter = () => {
+  const counter = useSelector<ReduxStore>(state => state.counter.value);
+
+  return <S.Container>{`${counter}`.padStart(2, "0")}</S.Container>;
 };
-
-const Counter = ({ value }: CounterProps) => (
-  <S.Container>{`${value}`.padStart(2, '0')}</S.Container>
-);
 
 export default Counter;
