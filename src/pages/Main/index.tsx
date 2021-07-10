@@ -4,8 +4,6 @@ import { ActionsSection, Counter } from "../../components";
 import * as S from "./styles";
 
 const Main = () => {
-  const [counter, setCounter] = useState(0);
-
   return (
     <S.Container>
       <S.Title>CodersClub RTK</S.Title>

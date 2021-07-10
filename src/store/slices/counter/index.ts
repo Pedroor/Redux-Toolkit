@@ -1,9 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface PayloadProps {
-  number: number;
-  name: string;
-}
 const counterSlice = createSlice({
   name: "@counter",
   initialState: {
@@ -21,9 +17,9 @@ const counterSlice = createSlice({
     resetCounter: state => {
       state.value = 0;
     },
-    randomIncrementCounter: (state, action: PayloadAction<PayloadProps>) => {
+    randomIncrementCounter: (state, action: PayloadAction<number>) => {
       if (state.value < 99) {
-        state.value += action.payload.number;
+        state.value += action.payload;
       }
     },
   },

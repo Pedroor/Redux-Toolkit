@@ -19,8 +19,7 @@ const ActionsSection = () => {
 
   const reset = () => dispatch(resetCounter());
 
-  const randomIncrement = () =>
-    dispatch(randomIncrementCounter({ number: 3, name: "PEDRO" }));
+  const randomIncrement = () => dispatch(randomIncrementCounter(3));
 
   return (
     <S.Container>
