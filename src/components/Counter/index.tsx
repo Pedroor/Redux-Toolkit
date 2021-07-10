@@ -1,9 +1,8 @@
-import { useSelector } from "react-redux";
-import { ReduxStore } from "../../store/types";
+import { useReduxSelector } from "../../hooks/useReduxSelector";
 import * as S from "./styles";
 
 const Counter = () => {
-  const counter = useSelector<ReduxStore>(state => state.counter.value);
+  const counter = useReduxSelector(state => state.counter.value);
 
   return <S.Container>{`${counter}`.padStart(2, "0")}</S.Container>;
 };
